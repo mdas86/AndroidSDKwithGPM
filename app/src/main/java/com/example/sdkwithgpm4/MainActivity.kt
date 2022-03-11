@@ -1,30 +1,26 @@
 package com.example.sdkwithgpm4
 
-import android.content.Intent
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.Settings
-import android.util.Log
 import android.widget.Button
 import android.widget.Toast
-import com.cyberark.identity.util.biometric.CyberArkBiometricCallback
-import com.cyberark.identity.util.biometric.CyberArkBiometricManager
-import com.cyberark.identity.util.biometric.CyberArkBiometricPromptUtility
+import androidx.appcompat.app.AppCompatActivity
 import com.example.library.MyLibProvider
+import com.example.library.util.biometric.BiometricCallback
+import com.example.library.util.biometric.BiometricManager
+import com.example.library.util.biometric.BiometricPromptUtility
 
 class MainActivity : AppCompatActivity() {
 
     // SDK biometrics utility variable
-    private lateinit var cyberArkBiometricPromptUtility: CyberArkBiometricPromptUtility
+    private lateinit var biometricPromptUtility: BiometricPromptUtility
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         // Invoke biometric utility instance
-        cyberArkBiometricPromptUtility =
-            CyberArkBiometricManager().getBiometricUtility(biometricCallback)
+        biometricPromptUtility =
+            BiometricManager().getBiometricUtility(biometricCallback)
 
         val callLibrary: Button = findViewById(R.id.call_library)
         callLibrary.setOnClickListener {
@@ -45,13 +41,13 @@ class MainActivity : AppCompatActivity() {
      *
      */
     private fun showBiometrics() {
-        cyberArkBiometricPromptUtility.showBioAuthentication(this, null, "Use App Pin", false)
+        biometricPromptUtility.showBioAuthentication(this, null, "Use App Pin", false)
     }
 
     /**
      * Callback to handle biometrics response
      */
-    private val biometricCallback = object : CyberArkBiometricCallback {
+    private val biometricCallback = object : BiometricCallback {
         override fun isAuthenticationSuccess(success: Boolean) {
             // Show Authentication success message using Toast
             Toast.makeText(
