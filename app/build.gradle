@@ -33,8 +33,9 @@ android {
 
 dependencies {
 
-    implementation project(path: ':library')
+//    implementation project(path: ':library')
 //    implementation files('libs/library-release.aar')
+    implementation 'com.example.library:biometrics_demo:3.0.3'
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
