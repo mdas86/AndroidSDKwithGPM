@@ -12,4 +12,12 @@ object MyLibProvider {
     fun test2SDK(context: Context) {
         Toast.makeText(context, "Test2 SDK function successfully", Toast.LENGTH_LONG).show()
     }
+
+    fun test3SDK(context: Context) {
+        Toast.makeText(context, "Test3 SDK function successfully", Toast.LENGTH_LONG).show()
+    }
+
+    fun test4SDK(context: Context) {
+        Toast.makeText(context, "Test4 SDK function successfully", Toast.LENGTH_LONG).show()
+    }
 }
