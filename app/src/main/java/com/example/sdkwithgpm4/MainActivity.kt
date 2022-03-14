@@ -33,13 +33,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // ************************ Handle biometrics Start **************************** //
-    /**
-     * Show all strong biometrics in a prompt
-     * negativeButtonText: "Use App Pin" text in order to handle fallback scenario
-     * useDevicePin: true/false (true when biometrics is integrated with device pin as fallback else false)
-     *
-     */
+
     private fun showBiometrics() {
         biometricPromptUtility.showBioAuthentication(this, null, "Use App Pin", false)
     }
@@ -105,5 +99,4 @@ class MainActivity : AppCompatActivity() {
             ).show()
         }
     }
-    // ************************ Handle biometrics End ******************************** //
 }
