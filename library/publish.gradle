@@ -2,7 +2,7 @@ apply plugin: 'maven-publish'
 
 def LIB_GROUP_ID = 'com.example.library'
 def LIB_ARTIFACT_ID = 'biometrics_demo'
-def LIB_VERSION = '3.0.5'
+def LIB_VERSION = '3.0.7'
 
 publishing {
     repositories {
@@ -20,7 +20,8 @@ publishing {
             groupId LIB_GROUP_ID
             artifactId LIB_ARTIFACT_ID
             version LIB_VERSION
-            artifact("$buildDir/outputs/aar/library-release.aar")
+//            artifact("$buildDir/outputs/aar/library-release.aar")
+            artifact("libs/library-release.aar")
 
             //generate pom file with transitive dependencies
             pom.withXml {
