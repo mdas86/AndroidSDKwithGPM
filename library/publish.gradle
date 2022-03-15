@@ -2,7 +2,7 @@ apply plugin: 'maven-publish'
 
 def LIB_GROUP_ID = 'com.example.library'
 def LIB_ARTIFACT_ID = 'biometrics_demo'
-def LIB_VERSION = '3.0.3'
+def LIB_VERSION = '3.0.4'
 
 publishing {
     repositories {
