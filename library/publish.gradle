@@ -1,8 +1,8 @@
 apply plugin: 'maven-publish'
 
 def LIB_GROUP_ID = 'com.example.library'
-def LIB_ARTIFACT_ID = 'biometrics_demo'
-def LIB_VERSION = '3.0.7'
+def LIB_ARTIFACT_ID = 'biometrics-demo'
+def LIB_VERSION = '3.1.1'
 
 publishing {
     repositories {
@@ -16,7 +16,7 @@ publishing {
         }
     }
     publications {
-        biometrics_demo(MavenPublication) {
+        biometricsDemo(MavenPublication) {
             groupId LIB_GROUP_ID
             artifactId LIB_ARTIFACT_ID
             version LIB_VERSION
